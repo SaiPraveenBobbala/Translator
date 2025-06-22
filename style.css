@@ -1,0 +1,208 @@
+:root {
+  --bg-dark: #121212;
+  --card-dark: #1f1f1f;
+  --accent: #00bfb3; /* Teal */
+  --accent-hover: #00d5cb;
+  --accent-alt: #3f5efb; /* Electric blue */
+  --text-light: #ffffff;
+  --text-muted: #aaaaaa;
+  --input-bg: #2a2a2a;
+  --border-color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+}
+
+.card {
+  background: var(--card-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 320px;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--accent);
+}
+
+.dropContainer {
+  position: relative;
+  background: var(--input-bg);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.dropTog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.dropMenu {
+  display: none;
+  margin-top: 0.5rem;
+  background: var(--input-bg);
+  color: var(--text-light);
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  border: 1px solid var(--border-color);
+}
+
+.dropContainer:hover .dropMenu {
+  display: block;
+}
+
+.dropMenu li {
+  padding: 0.6rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+
+}
+.dropMenu li:hover{
+  cursor: pointer;
+  border: 1px solid var(--accent);
+}
+
+
+.activeOpt {
+  color:  var(--accent);
+}
+
+
+.card textarea {
+  height: 150px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  resize: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-light);
+  font-family: inherit;
+}
+
+.charCnt {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.cardBottom {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.cardBottom label,
+.cardBottom button {
+  background: var(--accent);
+  color: black;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cardBottom label:hover,
+.cardBottom button:hover {
+  background: var(--accent-hover);
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swpBtn {
+  background: var(--accent-alt);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(63, 94, 251, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.swpBtn:hover {
+  background: rgb(35, 60, 184);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2rem 1rem;
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .mid {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .swpBtn {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    box-shadow: none;
+    background: var(--accent-alt);
+  }
+
+  .dropContainer {
+    font-size: 0.95rem;
+  }
+
+  textarea {
+    font-size: 0.95rem;
+    height: 130px;
+    width: 90%;
+  }
+
+  .cardBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+
